@@ -157,7 +157,7 @@
         //│  '       │  ]       │  }       │  )       │          │   │  \       │  _       │  +       │  │       │  ?       │
              &kp SQT    &kp RBKT   &kp RBRC   &kp RPAR   &trans         &kp BSLH   &kp UNDER  &kp PLUS   &kp PIPE   &kp QMARK
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                              &trans     &trans         &trans     &trans
+                                              &trans     &trans        &tog MSE    &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
