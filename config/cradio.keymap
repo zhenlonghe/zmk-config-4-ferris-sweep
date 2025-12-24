@@ -193,15 +193,15 @@
         mouse {
             display-name = "MSE";
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-            &tog MSE    &mkp MB4  &mkp MCLK   &mkp MB5   &trans    &msc SCRL_LEFT &msc SCRL_DOWN    &msc SCRL_UP     &msc SCRL_RIGHT    &tog MSE
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │          │
-            &trans      &trans    &trans     &trans     &trans     &mmv MOVE_LEFT &mmv MOVE_DOWN    &mmv MOVE_UP     &mmv MOVE_RIGHT    &trans
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │          │
-            &trans      &trans    &trans     &trans     &trans         &trans     &mkp MB4  &mkp MCLK  &mkp MB5    &trans
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭─────────────┬──────────────┬─────────────┬────────────────┬──────────╮
+        //│  Q       │  W       │  E       │  R       │  T       │   │  Y          │ U            │ I           │ O              │ P        │
+            &tog MSE    &mkp MB4  &mkp MCLK   &mkp MB5   &trans      &msc SCRL_LEFT &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &tog MSE
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├─────────────┼──────────────┼─────────────┼────────────────┼──────────┤
+        //│  A       │  S       │  D       │  F       │  G       │   │  H          │ J            │ K           │ L              │          │
+            &trans      &trans    &trans     &trans     &trans       &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP   &mmv MOVE_RIGHT  &trans
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  Z       │  X       │  C       │  V       │  B       │   │  N        │  M       │ , <      │ . >      │          │
+            &trans      &trans    &trans     &trans     &trans         &trans     &mkp MB4    &mkp MCLK  &mkp MB5    &trans
                                             &kp SPACE  &kp LSHIFT     &mkp LCLK  &mkp RCLK
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
