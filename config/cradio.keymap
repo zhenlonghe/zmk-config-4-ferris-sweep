@@ -165,8 +165,8 @@
         //│  "       │  [       │  {       │  (       │    {     │   │  /       │  -       │  =       │  :       │  ;       │
              &kp DQT    &kp LBKT   &kp LBRC   &kp LPAR   &kp LBRC       &kp FSLH   &kp MINUS  &kp EQUAL  &kp COLON  &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  '       │  ]       │  }       │  )       │    }     │   │  \       │  _       │  +       │  │       │  ?       │
-             &kp SQT   &kp RBKT   &kp RBRC    &kp RPAR   &kp RBRC       &kp BSLH   &kp UNDER  &kp PLUS   &kp PIPE   &kp QMARK
+        //│  '       │  ]       │ battery  │  )       │    }     │   │  \       │  _       │  +       │  │       │  ?       │
+            &kp SQT   &kp RBKT   &default_report &kp RPAR   &kp RBRC       &kp BSLH   &kp UNDER  &kp PLUS   &kp PIPE   &kp QMARK
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                               &trans     &kp ESC        &trans      &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
