@@ -15,8 +15,8 @@
 
 #define MAC 0
 #define WIN 1
-#define RIG 2
-#define LEF 3
+#define LEF 2
+#define RIG 3
 #define TRI 4
 #define MSE 5
 
@@ -150,7 +150,7 @@
         //│          │          │          │          │          │   │          │ HOME     │ PAGE DN  │ PAGE UP  │ END      │
             &trans     &trans     &trans     &trans      &trans        &trans     &kp HOME   &kp PG_DN  &kp PG_UP  &kp END
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans      &kp ESC       &tog MSE   &trans
+                                             &trans      &trans       &tog MSE   &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -160,7 +160,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  !       │  @       │  #       │  $       │  %       │   │  ^       │  &       │  *       │  `       │  ~       │
-             &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT      &kp CARET  &kp AMPS   &kp ASTRK  &kp GRAVE  &kp TILDE
+             &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT      &kp CARET  &kp AMPS  &kp ASTRK  &kp GRAVE  &kp TILDE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  "       │  [       │  {       │  (       │    {     │   │  /       │  -       │  =       │  :       │  ;       │
              &kp DQT    &kp LBKT   &kp LBRC   &kp LPAR   &kp LBRC       &kp FSLH   &kp MINUS  &kp EQUAL  &kp COLON  &kp SEMI
@@ -168,7 +168,7 @@
         //│  '       │  ]       │  }       │  )       │    }     │   │  \       │  _       │  +       │  │       │  ?       │
              &kp SQT   &kp RBKT   &kp RBRC    &kp RPAR   &kp RBRC       &kp BSLH   &kp UNDER  &kp PLUS   &kp PIPE   &kp QMARK
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                              &trans     &trans        &trans      &trans
+                                              &trans     &kp ESC        &trans      &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
