@@ -13,12 +13,6 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
-// Home row mods macro
-#define HRML(k2,k3,k4)  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
-#define HRMR(k1,k2,k3)  &ht RGUI k1  &ht RCTRL k2  &ht RALT k3
-#define WHRML(k2,k3,k4) &ht LALT k2  &ht LGUI k3  &ht LCTRL k4
-#define WHRMR(k1,k2,k3) &ht RCTRL k1  &ht RGUI k2  &ht RALT k3
-
 #define MAC 0
 #define WIN 1
 #define RIG 2
@@ -87,18 +81,35 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        qwesc {
+            bindings = <&kp ESC>;
+            key-positions = <0 1>;
+            layers = <0>;
+        };
+
+        opbs {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <8 9>;
+            layers = <0>;
+        };
+    };
+
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "DEFAULT";
+            display-name = "MAC";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
              &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  ENTER   │
-             &kp A      HRML(S,    D,         F)         &kp G          &kp H      HRMR(J,    K,         L)       &kp ENTER
+             &kp A    &ht LALT S &ht LCTRL D &ht LGUI F  &kp G         &kp H    &ht RGUI J &ht RCTRL K &ht RALT L &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │BACKSPACE │
              &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M     &kp COMMA  &kp DOT    &kp BSPC
@@ -116,7 +127,7 @@
              &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ENTER    │
-             &kp A    WHRML(S,     D,         F)         &kp G          &kp H      WHRMR(J,   K,         L)       &kp ENTER
+             &kp A    &ht LALT S &ht LGUI D &ht LCTRL F  &kp G          &kp H   &ht RCTRL J &ht RGUI K &ht RALT L  &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │BACKSPACE │
              &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp BSPC
@@ -126,25 +137,25 @@
             >;
         };
 
-        right_layer {
+        left_layer {
             display-name = "NUM & NAVIGATION";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ 1        │  2       │  3       │  4       │  5       │   │ 6        │ 7        │ 8        │ 9        │   0      │
             &kp N1      &kp N2     &kp N3     &kp N4     &kp N5        &kp N6     &kp N7     &kp N8     &kp N9       &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ DELETE   │ CapsLock │ PrintSc  │  INSERT  │          |   |          │ LEFT     │ DOWN     │ UP       │ RIGHT    │
-            &kp DEL    &kp CAPS   &kp PSCRN   &kp INS     &trans       &trans     &kp LARW   &kp DARW   &kp UARW   &kp RARW 
+        //│ DELETE   │ CapsLock │ PrintSc  │  INSERT  │          |   │ LEFT     │ DOWN     │ UP       │ RIGHT    │          │
+            &kp DEL    &kp CAPS   &kp PSCRN   &kp INS     &trans      &kp LARW   &kp DARW   &kp UARW   &kp RARW    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │ HOME     │ PAGE DN  │ PAGE UP  │ END      │
-            &trans     &trans     &trans     &trans      &trans        &trans     &kp HOME   &kp PG_DN  &kp PG_UP  &kp END 
+            &trans     &trans     &trans     &trans      &trans        &trans     &kp HOME   &kp PG_DN  &kp PG_UP  &kp END
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans      &kp ESC       &trans     &trans
+                                             &trans      &kp ESC       &tog MSE   &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
 
-        left_layer {
+        right_layer {
             display-name = "SYMBOL";
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
@@ -157,7 +168,7 @@
         //│  '       │  ]       │  }       │  )       │    }     │   │  \       │  _       │  +       │  │       │  ?       │
              &kp SQT   &kp RBKT   &kp RBRC    &kp RPAR   &kp RBRC       &kp BSLH   &kp UNDER  &kp PLUS   &kp PIPE   &kp QMARK
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                              &trans     &trans        &tog MSE      &trans   
+                                              &trans     &trans        &trans      &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -182,10 +193,17 @@
         mouse {
             display-name = "MSE";
             bindings = <
-            &tog MSE  &mkp MB4  &mkp MCLK  &mkp MB5   &trans      &msc SCRL_LEFT     &msc SCRL_DOWN    &msc SCRL_UP     &msc SCRL_RIGHT    &tog MSE
-            &trans      &trans    &trans     &trans     &trans      &mmv MOVE_LEFT     &mmv MOVE_DOWN    &mmv MOVE_UP     &mmv MOVE_RIGHT    &trans
-            &trans      &trans    &trans     &trans     &trans      &trans     &mkp MB4  &mkp MCLK  &mkp MB5  &trans
-            &kp SPACE  &kp LSHIFT  &mkp LCLK  &mkp RCLK
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
+            &tog MSE    &mkp MB4  &mkp MCLK   &mkp MB5   &trans    &msc SCRL_LEFT &msc SCRL_DOWN    &msc SCRL_UP     &msc SCRL_RIGHT    &tog MSE
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │          │
+            &trans      &trans    &trans     &trans     &trans     &mmv MOVE_LEFT &mmv MOVE_DOWN    &mmv MOVE_UP     &mmv MOVE_RIGHT    &trans
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │          │
+            &trans      &trans    &trans     &trans     &trans         &trans     &mkp MB4  &mkp MCLK  &mkp MB5    &trans
+                                            &kp SPACE  &kp LSHIFT     &mkp LCLK  &mkp RCLK
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
     };
