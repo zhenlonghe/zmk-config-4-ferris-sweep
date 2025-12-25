@@ -95,6 +95,14 @@
             key-positions = <8 9>;
             layers = <0>;
         };
+        ascaps {
+            bindings = <&kp CAPSLOCK>;
+            key-positions = <10 11>;
+        };
+        zxshift {
+            bindings = <&kp LEFT_SHIFT>;
+            key-positions = <20 21>;
+        };
     };
 
 
@@ -111,10 +119,10 @@
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  ENTER   │
              &kp A    &ht LALT S &ht LCTRL D &ht LGUI F  &kp G         &kp H    &ht RGUI J &ht RCTRL K &ht RALT L &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │BACKSPACE │
-             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M     &kp COMMA  &kp DOT    &kp BSPC
+        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │  /       │
+             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M     &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                           &lt LEF TAB  &kp LSHIFT    &kp SPACE  &lt RIG TAB
+                                           &lt LEF TAB  &kp LGUI      &kp SPACE  &lt RIG TAB
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -162,11 +170,11 @@
         //│  !       │  @       │  #       │  $       │  %       │   │  ^       │  &       │  *       │  `       │  ~       │
              &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT      &kp CARET  &kp AMPS  &kp ASTRK  &kp GRAVE  &kp TILDE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  "       │  [       │  {       │  (       │    {     │   │  /       │  -       │  =       │  :       │  ;       │
-             &kp DQT    &kp LBKT   &kp LBRC   &kp LPAR   &kp LBRC       &kp FSLH   &kp MINUS  &kp EQUAL  &kp COLON  &kp SEMI
+        //│  "       │  [       │  {       │  (       │          │   │  /       │  -       │  =       │  :       │  ;       │
+            &kp DQT    &kp LBKT   &kp LBRC   &kp LPAR  &bootloader      &kp FSLH   &kp MINUS  &kp EQUAL  &kp COLON  &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  '       │  ]       │ battery  │  )       │    }     │   │  \       │  _       │  +       │  │       │  ?       │
-            &kp SQT   &kp RBKT   &default_report &kp RPAR   &kp RBRC       &kp BSLH   &kp UNDER  &kp PLUS   &kp PIPE   &kp QMARK
+        //│  '       │  ]       │ }        │  )       │          │   │  \       │  _       │  +       │  │       │  ?       │
+            &kp SQT   &kp RBKT   &kp RBRC    &kp RPAR &default_report   &kp BSLH   &kp UNDER  &kp PLUS   &kp PIPE   &kp QMARK
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                               &trans     &kp ESC        &trans      &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -199,11 +207,12 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├─────────────┼──────────────┼─────────────┼────────────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H          │ J            │ K           │ L              │          │
             &trans      &trans    &trans     &trans     &trans       &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP   &mmv MOVE_RIGHT  &trans
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├───────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N        │  M       │ , <      │ . >      │          │
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├─────────────┼──────────────┼─────────────┼────────────────┼──────────┤
+        //│  Z       │  X       │  C       │  V       │  B       │   │  N          │  M           │ , <         │ . >            │          │
             &trans      &trans    &trans     &trans     &trans         &trans     &mkp MB4    &mkp MCLK  &mkp MB5    &trans
+        //╰──────────┴──────────┴──────────┼───────────┼─────────┤   ├─────────────┼──────────────┼─────────────┴────────────────┴──────────╯
                                             &kp SPACE  &kp LSHIFT     &mkp LCLK  &mkp RCLK
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+        //                                 ╰──────────┴──────────╯   ╰─────────────┴──────────────╯
             >;
         };
     };
