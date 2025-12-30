@@ -153,7 +153,7 @@
             &kp N1      &kp N2     &kp N3     &kp N4     &kp N5        &kp N6     &kp N7     &kp N8     &kp N9       &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  DELETE  │ CapsLock │ PrintSc  │  INSERT  │          │   │   LEFT   │   DOWN   │    UP    │  RIGHT   │          │
-            &kp DEL    &kp CAPS   &kp PSCRN   &kp INS     &trans      &kp LARW   &kp DARW   &kp UARW   &kp RARW    &trans
+            &kp DEL    &kp CAPS   &kp PSCRN   &kp INS     &trans      &kp LARW   &kp DARW   &kp UARW   &kp RARW    &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │   HOME   │ PAGE DN  │ PAGE UP  │   END    │
             &trans     &trans     &trans     &trans      &trans        &trans     &kp HOME   &kp PG_DN  &kp PG_UP  &kp END
@@ -174,7 +174,7 @@
             &kp DQT    &kp LBKT   &kp LBRC   &kp LPAR  &bootloader      &kp FSLH   &kp MINUS  &kp EQUAL  &kp COLON  &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│    '     │    ]     │    }     │    )     │          │   │    \     │    _     │    +     │    |     │    ?     │
-            &kp SQT   &kp RBKT    &kp RBRC    &kp RPAR &default_report   &kp BSLH   &kp UNDER  &kp PLUS   &kp PIPE   &kp QMARK
+            &kp SQT   &kp RBKT    &kp RBRC   &kp RPAR &default_report   &kp BSLH   &kp UNDER  &kp PLUS   &kp PIPE   &kp QMARK
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                               &trans     &kp ESC        &trans      &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯

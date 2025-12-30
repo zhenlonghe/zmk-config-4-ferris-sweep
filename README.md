@@ -1,53 +1,39 @@
-#+Title: k4i's split kbd
+# Quick Start
 
-[[./README-zh_CN.org][中文]] | English
+## Flash Firmware
 
-* Quick Start
-
-** flash new firmware
-
-1. [[https://github.com/sky-bro/zmk-config/fork][fork]] this repo
-2. (optional) update keymap and config file
-3. wait github action to build the firmware, then you download and decompress the zip file
-4. connect left or right half to your computer with use cable
-5. left or right half enter bootloader, you can enter bootloader by
+1. connect left or right half to your computer with use cable
+2. left or right half enter bootloader, you can enter bootloader by
    1) pressing the =&bootloader= key (requires that keyboard is connected to a device for typing)
    2) double-clicking the reset button
    3) quickly short-circuiting the reset button twice (if the button is not working)
    4) quickly short-circuiting the gnd & rst pins of the controller twice (top left corner, the second & thrid pins)
-6. copy firmware to your half of keyboard (updating keymap and changing keyboard name do not have to flash the right half)
-   1) filename with 'left' is for the left half of keyboard
-   2) filename with 'right' is for the right half of keyboard
-   3) filename with 'reset' is for the left/right half to forget its bluetooth connection info (when left & right half is not able to connect, to forget paired devices)
+3. copy firmware to your half of keyboard (updating keymap and changing keyboard name do not have to flash the right half)
+   1) filename start with 'left' is for the left half of keyboard
+   2) filename start with 'right' is for the right half of keyboard
+   3) filename start with 'reset' is for the left/right half to forget its bluetooth connection info (when left & right half is not able to connect, to forget paired devices)
 
-** My Keymap
+## My Keymap
 
 #+begin_quote
 screenshots taken from [[https://nickcoutsos.github.io/keymap-editor/][keymap editor]]
 #+end_quote
 
-*** Characters
+## Characters
 
 - The default layer and windows layer is where you would type characters.
 - they both have modifier keys =CTRL=, =OPTION (ALT)=, =COMMAND (WINDOWS)= sharing same position with character keys on your ring finger, middle finger and pointing finger on both hands. Hold the key to trigger the modifier, or tap the key to type in character.
 
-#+caption: default layer
-[[file:images/default-layer.png]]
 
-#+caption: windows layer
-[[file:images/windows-layer.png]]
-
-*** Numbers and Navigation
+## Numbers and Navigation
 
 - Hold the right tab to enter right layer, then you can type in numbers or do some navigation.
 - Release your right tab to return to default or windows layer.
 - Special keys:
   - =&bootloader= :: make right part of the split keyboard enter bootloader, then you can copy in your new firmware.
 
-#+caption: right layer
-[[file:images/right-layer.png]]
 
-*** Punctuations
+## Punctuations
 
 - Hold the left tab to enter left layer, then you can type in punctuations.
 - Release your left tab to return to default or windows layer.
@@ -56,10 +42,8 @@ screenshots taken from [[https://nickcoutsos.github.io/keymap-editor/][keymap ed
   - =&bootloader= :: make left part of the split keyboard enter bootloader, then you can copy in your new firmware.
   - =5= :: switch to mouse layer
 
-#+caption: left layer
-[[file:images/left-layer.png]]
 
-*** Functions
+## Functions
 
 - Hold both the left and right tab to enter tri layer, then you can type function keys.
   - =BT_SEL_#= :: select position of bluetooth device you are connecting or want to connect with.
@@ -70,19 +54,15 @@ screenshots taken from [[https://nickcoutsos.github.io/keymap-editor/][keymap ed
   - =&soft_off= :: enter soft off, like deep sleep which enters after an hour of inactivity, but soft off can only be woke up with wake up keys (set to left thumb key: =shift=)
 - Release your tab keys to return to default or windows layer.
 
-#+caption: tri layer
-[[file:images/tri-layer.png]]
 
-*** Mouse
+## Mouse
 
 - hold left tab (to enter left layer), and press space key to enter mouse layer
 - press =p= or =q= to quit mouse layer
 - =MB4= is for going backward and =MB5= is for going forward
 
-#+caption: mouse layer
-[[file:images/mouse-layer.png]]
 
-* References
+## References
 
 - [[https://github.com/davidphilipbarr/Sweep][Sweep Repo]]
 - [[https://www.youtube.com/watch?v=VShLPvF693k][keymap I initially copied]]
